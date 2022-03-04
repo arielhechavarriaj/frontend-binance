@@ -12,7 +12,7 @@
 <h1>Binance!</h1>
 <?php
 
-$api_url = 'https://api-backend-binance.herokuapp.com/';
+$api_url = 'http://localhost:3000/binance';
 
 // Read JSON file
 $json_data = file_get_contents($api_url);
@@ -21,7 +21,7 @@ $json_data = file_get_contents($api_url);
 $response_data = json_decode($json_data);
 
 //  data exists in 'data' object
-$user_data = $response_data->data;
+$data = $response_data;
 
   echo   "<table class='table table-dark'>
     <thead>
@@ -36,22 +36,24 @@ $user_data = $response_data->data;
       </tr>
     </thead>
     <tbody>";
-    while($row = mysql_fetch_array($result))
+
+foreach ($data as $row) 
     {
         echo "<tr>";
-        echo "<td>" . $row['symbol'] . "</td>";
+
+        echo "<td>" . $row->symbol . "</td>";
       
-        echo "<td>" . $row['priceChange'] . "</td>";
+        echo "<td>" . $row->priceChange . "</td>";
       
-        echo "<td>" . $row['priceChangePercent'] . "</td>";
+        echo "<td>" . $row->priceChangePercent. "</td>";
       
-        echo "<td>" . $row['lastPrice'] . "</td>";
+        echo "<td>" . $row->lastPrice . "</td>";
       
-        echo "<td>" . $row['highPrice'] . "</td>";
+        echo "<td>" . $row->highPrice . "</td>";
       
-        echo "<td>" . $row['lowPrice'] . "</td>";
+        echo "<td>" . $row->lowPrice . "</td>";
       
-        echo "<td>" . $row['volume'] . "</td>";
+        echo "<td>" . $row->volume . "</td>";
       
         echo "</tr>";
     }
