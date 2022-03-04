@@ -9,7 +9,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-
+<h1>Binance!</h1>
 <?php
 
 $api_url = 'https://api-backend-binance.herokuapp.com/';
@@ -22,8 +22,6 @@ $response_data = json_decode($json_data);
 
 //  data exists in 'data' object
 $user_data = $response_data->data;
-    
-die($user_data);
 
   echo   "<table class='table table-dark'>
     <thead>
