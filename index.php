@@ -12,7 +12,9 @@
 <h1>Binance!</h1>
 <?php
 
-$api_url = 'http://localhost:3000/binance';
+$api_url = 'https://api-backend-binance.herokuapp.com/';
+//http://localhost:3000/binance
+
 
 // Read JSON file
 $json_data = file_get_contents($api_url);
